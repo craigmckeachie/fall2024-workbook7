@@ -1,0 +1,19 @@
+### Agify
+GET https://api.agify.io/?name=gurjot
+
+### Chuck Norris Jokes
+GET https://api.chucknorris.io/jokes/random
+
+## Deck of Cards
+
+### Deck
+GET https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1
+
+### Draw
+GET https://deckofcardsapi.com/api/deck/rogv4ys9zv6m/draw/?count=5
+
+### Trivia
+https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple
+
+### Music Trivia
+https://opentdb.com/api.php?amount=10&category=12

@@ -1,0 +1,9 @@
+### PLANETS
+GET https://swapi.dev/api/planets/3/?format=json
+
+### PEOPLE
+GET https://swapi.dev/api/people/1/
+
+
+### FILMS
+GET https://swapi.dev/api/films/
