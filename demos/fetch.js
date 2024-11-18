@@ -13,7 +13,7 @@ function parseJSON(response) {
   return arrayOfUserObjects; //returning the array is important because it keeps the promise chain going, i.e. the data will flow into the next then block
 }
 
-//recieves the data you asked for and does something to display it
+//receives the data you asked for and does something to display it
 function displayUsers(users) {
   console.log(users);
 }
