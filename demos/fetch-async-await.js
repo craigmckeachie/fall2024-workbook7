@@ -13,6 +13,7 @@
 
 //call the api to get the data
 //when we get the data back, we will print it
+//async just marks the function as one that you can do something asynchronous in, in other words await something
 async function getData() {
   //you get a promise object back which
   //will send you a signal that the previous operation has completed
