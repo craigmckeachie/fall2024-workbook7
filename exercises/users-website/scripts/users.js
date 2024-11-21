@@ -28,10 +28,16 @@ function buildTableRow(user) {
   let textNode1 = document.createTextNode(addressLine1);
   let br = document.createElement("br");
   let textNode2 = document.createTextNode(addressLine2);
-  td3.append(textNode1, br, textNode2)
+  td3.append(textNode1, br, textNode2);
 
   let td4 = tr.insertCell();
   td4.innerText = user.company.name;
+
+  let td5 = tr.insertCell();
+  let anchor = document.createElement("a");
+  anchor.href = `user-details.html?userId=${user.id}`;
+  anchor.text = "See details";
+  td5.appendChild(anchor);
 }
 
 function displayUsers(users) {
