@@ -6,7 +6,7 @@ let userId = urlParams.get("userId");
 
 
 async function getUser() {
-  let promise = fetch("https://jsonplaceholder.typicode.com/users/" + userId); 
+  let promise = fetch("https://jsonplaceholder.typicode.com/users/" + ); 
   let response = await promise; 
   let user = await response.json(); 
   console.log(user);
