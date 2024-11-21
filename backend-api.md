@@ -20,8 +20,17 @@
    > You will use the repository url you copied in the previous step
 1. After that finishes you should see output that includes
    ```
-   successfully cloned repository
+   Cloning into '[repository name]'...
+   ...
+   done.
    ```
+1. Run the command
+
+   ```sh
+   cd [repository name]
+   ```
+   - this will change directory (cd) of the terminal so that you are in the folder/directory where the repository code is
+
 1. Run the command
 
    ```sh
@@ -38,7 +47,7 @@
    ```
 1. After that finishes you should see output that includes
    ```
-   ...running on port xxxx
+   ...running/listening on port xxxx
    ```
    - xxxx is the port number
 1. Open your browser to verify the backend/api is running
