@@ -19,10 +19,14 @@
         </select>
 
         <label class="form-label" for="categorySelect">Category</label>
-        <select id="categorySelect" class="form-select">
+        <select id="categorySelect" class="form-select" onchange="filterProducts();">
             <option value="">Select...</option>
           
         </select>
+
+        <div id="productsList" class="d-flex flex-wrap gap-2">
+
+        </div>
         
     </main>
     <script src="./scripts/index.js"></script>

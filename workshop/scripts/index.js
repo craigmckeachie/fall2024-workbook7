@@ -3,6 +3,7 @@
 let url = "http://localhost:8081/api/categories";
 let shopByTypeSelect = document.querySelector("#shopByTypeSelect");
 let categorySelect = document.querySelector("#categorySelect");
+let productsList = document.querySelector("#productsList")
 
 async function getCategories() {
   try {
@@ -36,6 +37,8 @@ async function getProducts() {
     console.log("error:", error.message);
   }
 }
+
+getProducts();
 
 function displayProductCards(products) {
   for (const product of products) {
@@ -78,5 +81,13 @@ function createProductCard(product) {
   cardBody.appendChild(cardText);
   cardContainer.appendChild(cardBody);
 
-  coursesList.appendChild(cardContainer);
+  productsList.appendChild(cardContainer);
 }
+
+function filterProducts(){
+    let categoryId = categorySelect.value; 
+    console.log(categoryId);
+    
+}
+
+
