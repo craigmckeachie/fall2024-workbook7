@@ -16,14 +16,13 @@ async function getCategories() {
 }
 
 function populateCategorySelect(categories) {
-  //category.categoryId will be the value
-  //categrory.name will be the text displayed
-  for (const category of categories) {
+
+  categories.forEach((category) => {
     let option = document.createElement("option");
     option.value = category.categoryId;
     option.innerText = category.name;
     categorySelect.appendChild(option);
-  }
+  });
 }
 
 getCategories();
