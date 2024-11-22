@@ -1,16 +1,16 @@
 "use strict";
 
-let url = "http://localhost:8081/api/categories";
 let shopByTypeSelect = document.querySelector("#shopByTypeSelect");
 let categorySelect = document.querySelector("#categorySelect");
 let productsList = document.querySelector("#productsList");
 
 async function getCategories() {
   try {
+    let url = "http://localhost:8081/api/categories";
     let response = await fetch(url);
     let categories = await response.json();
     console.log("categories", categories);
-    populateCategorySelect(categories);
+    return categories;
   } catch (error) {
     console.log("error:", error.message);
   }
@@ -25,8 +25,6 @@ function populateCategorySelect(categories) {
   });
 }
 
-getCategories();
-
 async function getProducts() {
   try {
     let response = await fetch("http://localhost:8081/api/products");
@@ -38,35 +36,12 @@ async function getProducts() {
   }
 }
 
-(async function () {
-  let products = await getProducts();
-  displayProductCards(products);
-})();
-
-async function selectCategory() {
-  let byCategoryId = categorySelect.value;
-  console.log(byCategoryId);
-  let products = await getProducts();
-  let filteredProducts = products.filter((product) => product.categoryId == byCategoryId);
-  displayProductCards(filteredProducts);
-}
-
-function displayProductCards(products) {
+function populateProductCards(products) {
   productsList.innerHTML = "";
   for (const product of products) {
     createProductCard(product);
   }
 }
-
-// {
-//     "productId": "1",
-//     "productName": "Chai",
-//     "unitPrice": 18,
-//     "unitsInStock": 39,
-//     "categoryId": "1",
-//     "supplier": "Exotic Liquids",
-//     "discontinued": "false"
-//   },
 
 function createProductCard(product) {
   const cardContainer = document.createElement("div");
@@ -76,17 +51,17 @@ function createProductCard(product) {
   const cardBody = document.createElement("div");
   cardBody.className = "card-body";
 
-  const cardTitle = document.createElement("h5");
+  const cardTitle = document.createElement("h6");
   cardTitle.className = "card-title";
   cardTitle.textContent = product.productName;
 
   const cardSubtitle = document.createElement("h6");
   cardSubtitle.className = "card-subtitle mb-2 text-body-secondary";
-  //   cardSubtitle.textContent = `${courseNumber}, ${department}`;
+  cardSubtitle.textContent = "$" + product.unitPrice.toFixed(2);
 
   const cardText = document.createElement("p");
-  cardText.className = "card-text";
-  //   cardText.textContent = `Starts: ${startDate}, Instructor: ${instructor}`;
+  cardText.className = "card-text text-body-secondary";
+  cardText.textContent = product.supplier;
 
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(cardSubtitle);
@@ -95,3 +70,18 @@ function createProductCard(product) {
 
   productsList.appendChild(cardContainer);
 }
+
+async function selectCategory() {
+  let byCategoryId = categorySelect.value;
+  console.log(byCategoryId);
+  let products = await getProducts();
+  let filteredProducts = products.filter((product) => product.categoryId == byCategoryId);
+  populateProductCards(filteredProducts);
+}
+
+(async function initializePage() {
+  let categories = await getCategories();
+  populateCategorySelect(categories);
+  let products = await getProducts();
+  populateProductCards(products);
+})();
