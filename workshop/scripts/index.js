@@ -7,10 +7,22 @@ let categorySelect = document.querySelector("#categorySelect");
 async function getCategories() {
   try {
     let response = await fetch(url);
-    let data = await response.json() ;
-    console.log(data);
+    let categories = await response.json();
+    console.log("categories", categories);
+    populateCategorySelect(categories);
   } catch (error) {
     console.log("error:", error.message);
+  }
+}
+
+function populateCategorySelect(categories) {
+  //category.categoryId will be the value
+  //categrory.name will be the text displayed
+  for (const category of categories) {
+    let option = document.createElement("option");
+    option.value = category.categoryId;
+    option.innerText = category.name;
+    categorySelect.appendChild(option);
   }
 }
 
