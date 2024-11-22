@@ -79,9 +79,11 @@ async function selectCategory() {
   populateProductCards(filteredProducts);
 }
 
-(async function initializePage() {
+async function initializePage() {
   let categories = await getCategories();
   populateCategorySelect(categories);
   let products = await getProducts();
   populateProductCards(products);
-})();
+}
+
+initializePage();
