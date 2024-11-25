@@ -3,6 +3,7 @@
 let url = "http://localhost:8081/api/categories";
 let shopByTypeSelect = document.querySelector("#shopByTypeSelect");
 let categorySelect = document.querySelector("#categorySelect");
+let productsList = document.querySelector("#productsList");
 
 async function getCategories() {
   try {
@@ -27,14 +28,14 @@ function populateCategorySelect(categories) {
 getCategories();
 
 async function getProducts() {
-  try {
+  // try {
     let response = await fetch("http://localhost:8081/api/products");
     let products = await response.json();
     console.log("products", products);
     displayProductCards(products);
-  } catch (error) {
-    console.log("error:", error.message);
-  }
+  // } catch (error) {
+  //   console.log("error:", error.message);
+  // }
 }
 
 function displayProductCards(products) {
@@ -42,6 +43,8 @@ function displayProductCards(products) {
     createProductCard(product);
   }
 }
+
+getProducts();
 
 // {
 //     "productId": "1",
@@ -78,5 +81,5 @@ function createProductCard(product) {
   cardBody.appendChild(cardText);
   cardContainer.appendChild(cardBody);
 
-  coursesList.appendChild(cardContainer);
+  productsList.appendChild(cardContainer);
 }
