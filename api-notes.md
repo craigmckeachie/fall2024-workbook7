@@ -30,3 +30,17 @@
     - OR
     - call the .then function on the promise
   - happens in the background of the browser (AJAX)
+
+## HTTP Methods (Verbs)
+
+- GET (Read) (works for one thing or many things)
+- POST (Create/New/Insert)
+- PUT (Update/Edit/Change)
+- DELETE (Delete/Remove)`
+> The second letter of `PUT` is `U` so it **U**pdates.
+
+CRUD-
+C- Create (POST)
+R - Read (GET)
+U - Update (PUT)
+D - Delete (DELETE)
