@@ -87,3 +87,13 @@ async function initializePage() {
 }
 
 initializePage();
+
+//Naming patterns
+// getXXX
+// populateXXX
+
+// fetchXXX
+// displayXXX
+
+// loadXXX
+// renderXXX
