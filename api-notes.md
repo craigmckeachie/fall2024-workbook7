@@ -1,5 +1,12 @@
 # API Notes
 
+## JSON
+
+- JSON = "string"
+- JSON is a string for of a JavaScript object
+- use `JSON.parse()` to turn a json string back into a beach ball aka a js object
+- use `JSON.stingify` to turn a javascript object into a string so it can be passed over the network
+
 ## Tools to make API calls
 
 - Browser
