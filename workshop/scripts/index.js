@@ -9,8 +9,8 @@ async function getCategories() {
   try {
     let response = await fetch(url);
     let categories = await response.json();
-    console.log("categories", categories);
-    populateCategorySelect(categories);
+    // console.log("categories", categories);
+    return categories;
   } catch (error) {
     console.log("error:", error.message);
   }
@@ -25,26 +25,22 @@ function populateCategorySelect(categories) {
   });
 }
 
-getCategories();
-
 async function getProducts() {
-  // try {
+  try {
     let response = await fetch("http://localhost:8081/api/products");
     let products = await response.json();
-    console.log("products", products);
-    displayProductCards(products);
-  // } catch (error) {
-  //   console.log("error:", error.message);
-  // }
+    // console.log("products", products);
+    return products;
+  } catch (error) {
+    console.log("error:", error.message);
+  }
 }
 
-function displayProductCards(products) {
+function populateProductCards(products) {
   for (const product of products) {
     createProductCard(product);
   }
 }
-
-getProducts();
 
 // {
 //     "productId": "1",
@@ -66,7 +62,7 @@ function createProductCard(product) {
 
   const cardTitle = document.createElement("h5");
   cardTitle.className = "card-title";
-    cardTitle.textContent = product.productName;
+  cardTitle.textContent = product.productName;
 
   const cardSubtitle = document.createElement("h6");
   cardSubtitle.className = "card-subtitle mb-2 text-body-secondary";
@@ -83,3 +79,15 @@ function createProductCard(product) {
 
   productsList.appendChild(cardContainer);
 }
+
+async function initializePage() {
+  let categories = await getCategories();
+  populateCategorySelect(categories);
+  let products = await getProducts();
+  populateProductCards(products);
+}
+initializePage();
+
+//Naming patterns
+// getXXX
+// populateXXX
