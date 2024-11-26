@@ -17,3 +17,11 @@ Use this code as an example during this exercise:
 1. Create a file `delete-todo.js`
    - use fetch to delete from the todo api an existing todo
 1. Return to the main room once you have completed all these steps
+
+## Exercise 2
+
+Call the api and display a list.
+Use a bootstrap `list-group`. Here is an [example](https://getbootstrap.com/docs/5.3/components/list-group/#checkboxes-and-radios)
+
+## Exercise 3
+Call the api to post a new todo.
