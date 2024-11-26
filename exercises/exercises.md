@@ -16,3 +16,4 @@ Use this code as an example during this exercise:
    - use fetch to put to the todo api and update an existing todo
 1. Create a file `delete-todo.js`
    - use fetch to delete from the todo api an existing todo
+1. Return to the main room once you have completed all these steps
