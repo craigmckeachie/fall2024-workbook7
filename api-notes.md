@@ -22,7 +22,10 @@
   - choose HTTP verb from dropdown
   - past URL into textbox
   - click Send
-- fetch function
+
+## Making API Calls with Code
+
+- `fetch` function
   - how you call API from JavaScript code
   - doesn't happen right away (asynchronous)
     - need to `await` it
@@ -37,10 +40,11 @@
 - POST (Create/New/Insert)
 - PUT (Update/Edit/Change)
 - DELETE (Delete/Remove)`
-> The second letter of `PUT` is `U` so it **U**pdates.
+  > The second letter of `PUT` is `U` so it **U**pdates.
 
 CRUD-
-C- Create (POST)
-R - Read (GET)
-U - Update (PUT)
-D - Delete (DELETE)
+
+- C- Create (POST)
+- R - Read (GET)
+- U - Update (PUT)
+- D - Delete (DELETE)
